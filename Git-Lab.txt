@@ -1,0 +1,139 @@
+Work with a partner on one of your computers. Download this text file and fill it out as
+you go. When you're done, switch to the other partner's computer and do it again.
+
+Use Terminal (on Mac) or Git Bash (on Windows) and your favorite text editor to complete
+the following. Wherever you see a >>>, record what command you used to complete that step.
+If you used multiple commands, write all the command you used.
+Wherever you see a ???, write a short answer to the question.
+
+1. Create a new folder
+>>> mkdir git-lab
+
+2. Make that folder into a local Git repository
+>>> cd git-lab 
+	git init
+
+3. Add a new empty file called story.txt
+>>> touch story.txt
+
+4. Open that file in a text editor.
+>>> (optional)  open story.txt
+
+5. Add an opening paragraph to story.txt. Save it. The file should be at least several
+lines long.
+
+6. Create another file called authors.txt. Add your names to it and save it. touch authors.txt
+
+7. Commit only story.txt, with commit message "Initial Commit".
+>>> git commit -m “Initial Commit”
+
+8. What is the status of story.txt and what is the status of authors.txt at this point?
+??? story.txt: Comitted
+??? authors.txt: Not tracked
+
+9. Add a bit to your story in a text editor and save it. What is the status of story.txt now?
+??? Tracked but unstaged
+
+10. Stage story.txt for the next commit.
+>>> git add story.txt
+
+11. Stage authors.txt for the next commit.
+>>> git add authors.txt
+
+12. One second thought, unstage authors.txt. We don't want to commit it yet. 
+>>> git reset HEAD authors.txt
+
+13. Hmm. On third thought, yeah, let's stage it after all.
+>>> git add authors.txt
+
+14. Now commit both staged files. (message = "extended story and added authors")
+>>> git commit -m “extended story and added authors”
+
+15. Set up a GitHub repository and push this latest commit to that repo.
+>>> git remote add origin https://github.com/jenniferdoig628/git-practice.git
+
+	git push -u origin master
+
+16. One of you make a change to one of the files while the other is not looking. Don't
+stage or commit.
+
+17. The other of you use Git's command line tools to figure out what file is changed and
+what is changed about it. (You must use at least two different commands in your
+investigation.)
+>>>   git status
+>>>  open story.txt
+
+18. Now undo the change that was made.
+>>> git checkout story.txt
+
+19. Add a bogus author. Save and stage.
+>>> git open author.txt (change)
+	git add author.txt
+
+20. Can you use git tools to see that change?
+>>>  open author.txt
+
+21. Nevermind that. Now completely undo that change so that you're back to the real
+authors from the last commit.
+>>> git checkout authors.txt
+
+22. Add another couple sentences to your story and commit.
+>>> open story.txt 
+Git add story.txt
+Git commit  -m “added more to story” 
+
+23. Delete authors.txt and commit that.
+>>> git rm —cached author.txt
+Git commit -m “deleted author.txt”
+
+24. List all the commits.
+>>>  
+
+$ git log
+commit c5903c47d97d5929000c700358e4a95def38a029
+Author: Jenn Shutter <jenniferdoig628@gmail.com>
+Date:   Fri Feb 3 16:20:05 2017 -0500
+
+    deleted author.txt
+
+commit 92dab7d6edbc586743e5be2e7abe8d58286783a8
+Author: Jenn Shutter <jenniferdoig628@gmail.com>
+Date:   Fri Feb 3 16:12:25 2017 -0500
+
+    added more to story
+
+commit 920c1ac8a966460a6d59ef02287940c7365811cc
+Author: Jenn Shutter <jenniferdoig628@gmail.com>
+Date:   Fri Feb 3 15:54:23 2017 -0500
+
+    extended story and added authors
+
+commit c34f60ae0a427b7cd97b101b892b2488b8c4ca10
+Author: Jenn Shutter <jenniferdoig628@gmail.com>
+Date:   Fri Feb 3 15:47:43 2017 -0500
+
+    First Commit
+:
+
+
+25. You're reminiscing about the good 'ol days of seeing your names in text. Switch back
+to the commit where authors.txt existed so you can gaze upon it one more time.
+>>> 
+
+26. But the past is the past. Return to the HEAD commit.
+>>> 
+
+27. Add this file (Git Lab.txt) to your folder and commit it.
+
+28. Push your latest changes to the GitHub.
+
+*** Bonus below...
+29. Make and commit another change to your story.
+>>> 
+
+30. You're experiencing remorse for removing attribution. You can't live with yourself.
+Bring back authors.txt from the past in a new commit on top of your new story changes.
+Explain how you pulled this off, including any commands.
+??? 
+
+31. Commit you latest changes to this file (Git Lab.txt) and push to GitHub.
